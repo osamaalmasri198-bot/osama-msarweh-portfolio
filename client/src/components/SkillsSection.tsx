@@ -144,20 +144,17 @@ export default function SkillsSection() {
           ))}
         </div>
 
-        {/* Marquee tags */}
+        {/* All tech tags */}
         <motion.div
-          className="overflow-hidden"
           initial={{ opacity: 0 }}
           animate={inView ? { opacity: 1 } : {}}
           transition={{ duration: 0.6, delay: 0.5 }}
         >
           <p className="section-tag mb-4">All Technologies</p>
-          <div className="relative">
-            <div className="flex gap-3 animate-marquee w-max">
-              {[...allTags, ...allTags].map((tag, i) => (
-                <span key={i} className="skill-tag">{tag}</span>
-              ))}
-            </div>
+          <div className="flex flex-wrap gap-3">
+            {allTags.map((tag) => (
+              <span key={tag} className="skill-tag">{tag}</span>
+            ))}
           </div>
         </motion.div>
       </div>
